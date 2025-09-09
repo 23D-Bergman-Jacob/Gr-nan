@@ -36,9 +36,13 @@ public class App {
                 tb.nextLine();
             }
         }
-        int åktur;
+        int åktur = 11;
         String[] attraknamnkanåka = new String[5];
         while (kuponger>2) {
+                    if (tb.hasNextInt()) {
+        } else {
+            System.out.println();
+        }
             x = 0;
             System.out.println("Du har " + kuponger + " Kupånger!");
             System.out.println("attraktionerna du kan åka är:");
@@ -48,7 +52,7 @@ public class App {
                 if (attrakpris[i] <= kuponger && svar[1]>= attraklängd[i] &&  svar[0]>= attrakålder[i]) {
                     attraknamnkanåka[i] = attraknamn[i];
                     kanåka[i] = i;
-                    System.out.println(i + " " + attraknamnkanåka[i]);
+                    System.out.println((i+1) + " " + attraknamnkanåka[i]);
                 }
             }
             System.out.println("Vilken karusell vill du åka?");
@@ -57,7 +61,6 @@ public class App {
             } catch (Exception e) {
                 System.out.println("Ogiltig inmatning. Vänligen ange ett heltal.");
                 // tb.nextLine();
-                continue;
             }
             if (tb.hasNext()) {
                 tb.nextLine();
@@ -73,7 +76,9 @@ public class App {
                 }
                     if (x!=1) {
                         
-                    
+                        if (tb.hasNext()) {
+                            tb.nextLine();
+                        }
                     
                         System.out.println("Du kan inte åka den där banan");
                         continue;
@@ -88,8 +93,8 @@ public class App {
                 System.out.println("Det där är ingen bana!");
                 continue;
                 }
+            }
             tb.close();
-        }
     }
 } 
 
